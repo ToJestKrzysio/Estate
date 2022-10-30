@@ -11,6 +11,10 @@ function App() {
             </div>
             <div className={"absolute top-0 left-0 w-full"}>
                 <NavBar/>
+                <h1>Find Your Dream Home</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cum labore nostrum officiis perspiciatis quia quis repellendus repudiandae
+                </p>
             </div>
         </div>
     );
