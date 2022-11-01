@@ -11,7 +11,7 @@ function App() {
     const applyBlur = burgerOpen ? "blur-sm" : ""
 
     return (
-        <div className={"w-screen h-screen relative"}>
+        <div className={"w-screen h-full relative"}>
             <Background className={applyBlur} src={house1} alt={"House"}/>
             <div className={"absolute z-10 top-0 left-0 w-full"}>
                 <NavBar burgerOpen={burgerOpen} burgerOpenSet={burgerOpenSet}/>
@@ -25,7 +25,8 @@ function App() {
                     <Button primary={false} text={"Buy"}/>
                 </div>
             </div>
-        </div>);
+        </div>
+    );
 }
 
 export default App;
