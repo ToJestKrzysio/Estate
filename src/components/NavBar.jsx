@@ -13,7 +13,7 @@ import {Burger} from "./Burger";
 
 export function NavBar({burgerOpen, burgerOpenSet}) {
     return (
-        <div className={"flex flex-col relative h-screen md:h-auto"}>
+        <div className={"flex flex-col relative md:h-auto"}>
             <div className={`flex md:hidden justify-between w-screen px-4 py-3 ${burgerOpen ? "blur-sm" : ""}`}>
                 <img className="h-10 cursor-pointer" src={logo} alt={"Company Logo"}/>
                 <Burger onClick={() => burgerOpenSet(!burgerOpen)} onBlur={() => burgerOpenSet(false)}/>
