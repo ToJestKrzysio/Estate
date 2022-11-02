@@ -6,16 +6,10 @@ import {Button} from "./components/Button";
 import {Title} from "./components/Title";
 
 
-function App() {
-    const [burgerOpen, burgerOpenSet] = useState(false);
-    const applyBlur = burgerOpen ? "blur-sm" : ""
-
+function Hero({applyBlur}) {
     return (
         <div className={"w-screen h-full relative"}>
             <Background className={applyBlur} src={house1} alt={"House"}/>
-            <div className={"absolute z-10 top-0 left-0 w-full"}>
-                <NavBar burgerOpen={burgerOpen} burgerOpenSet={burgerOpenSet}/>
-            </div>
             <div className={`absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 ${applyBlur}`}>
                 <Title/>
             </div>
@@ -24,6 +18,28 @@ function App() {
                     <Button primary={true} text={"Rent"}/>
                     <Button primary={false} text={"Buy"}/>
                 </div>
+            </div>
+        </div>
+    );
+}
+
+function App() {
+    const [burgerOpen, burgerOpenSet] = useState(false);
+    const applyBlur = burgerOpen ? "blur-sm" : ""
+
+    return (
+        <div className="snap-y snap-mandatory h-screen w-screen overflow-y-scroll overflow-x-hidden">
+            <div className={"sticky z-10 top-0 left-0 w-full h-0"}>
+                <NavBar burgerOpen={burgerOpen} burgerOpenSet={burgerOpenSet}/>
+            </div>
+            <div className={"snap-start snap-always"}>
+                <Hero applyBlur={applyBlur}/>
+            </div>
+            <div className={"snap-start snap-always"}>
+                <Hero applyBlur={applyBlur}/>
+            </div>
+            <div className={"snap-start snap-always"}>
+                <Hero applyBlur={applyBlur}/>
             </div>
         </div>
     );
